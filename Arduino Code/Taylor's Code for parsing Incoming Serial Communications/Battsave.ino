@@ -28,7 +28,7 @@ void getMessage(){
         char c = Serial.read();
         String test = "test";
 
-        if (c!= '\r'){ 
+        if (c!= '\0'){ 
           incoming += c;
           //Serial.print("recorded");
         }
