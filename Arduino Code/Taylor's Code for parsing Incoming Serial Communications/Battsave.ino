@@ -10,6 +10,7 @@
     
     String incoming;
     String message;
+    boolean newData = false;
 
     
 
