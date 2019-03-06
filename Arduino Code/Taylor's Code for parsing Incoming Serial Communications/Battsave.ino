@@ -120,7 +120,8 @@ void loop() {
 
 //BE WARY OF USING DELAYS
 //Arduinos can only run one loop. This means that they can only do one thing at a time. 
-//If the code tells them to delay for 5 seconds, any incoming serial messages from the phone will be ignored and missed.
+//If the code tells them to delay for 5 seconds, any incoming serial messages from the phone might be ignored and missed.
+//(I believe theres actually a hardware buffer to help mitigate this problem, but it won't eliminate it)
 //Idk why we would need to use delays anywhere in this code, but if we do, we will need to implement an interrupt handler :(
   
 }
