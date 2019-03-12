@@ -41,9 +41,6 @@ public class MainActivity extends AppCompatActivity {
     */
 
     public void percentMe(View view) {
-        float batteryPct = 0;
-        double StopCharge = 80.0;
-        while (batteryPct < StopCharge) {
             IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
             Intent batteryStatus = getApplicationContext().registerReceiver(null, ifilter);
             //Are we charging/charged?
@@ -64,16 +61,10 @@ public class MainActivity extends AppCompatActivity {
                     findViewById(R.id.textViewPERCENTAGE);
 
             String mytext = Float.toString(batteryPct);
-            Thread.sleep(1000);
-                    //.SECONDS.wait(5000);
             randomView.setText(mytext);
-        }
     }
 
-    public void voltMe(View view){
-        int count = 0;
-        while (count < 10) {
-
+    public void voltMe(View view){{
             IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
             Intent batteryStatus = getApplicationContext().registerReceiver(null, ifilter);
             //Are we charging/charged?
@@ -89,10 +80,8 @@ public class MainActivity extends AppCompatActivity {
             TextView randomView = (TextView)
                     findViewById(R.id.textViewTEMPERATURE);
 
-            randomView.setText(Integer.toString(batteryVoltage));
-            count++;
+            randomView.setText(Integer.toString(batteryVoltage))
 
-        }
     }
 
     public void ampMe(View view) {
