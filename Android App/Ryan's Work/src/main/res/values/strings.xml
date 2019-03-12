@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Battsave</string>
+    <string name="welcome_to_battsave">0</string>
+    <string name="welcome_to_Battsave">Welcome to Battsave</string>
+</resources>
