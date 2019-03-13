@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1ed9a4"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="20dp"
+        android:text="BattSave"
+        android:textColor="#ffffff"
+        android:textSize="45dp" />
+
+    <ImageView
+        android:layout_width="79dp"
+        android:layout_height="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/batt_save_icon" />
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:max="100"/>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:text="Large Text"
+        />
+
+    <TextView
+        android:id="@+id/percentView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/percentage_button"
+        android:layout_alignBaseline="@id/percentage_button"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/voltageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/voltage_button"
+        android:layout_alignBaseline="@id/voltage_button"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/currentView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/voltageView"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/current_button"
+        android:layout_alignBaseline="@id/current_button"
+        android:text="0" />
+    <Button
+        android:id="@+id/percentage_button"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#1ed9a4"
+        android:onClick="percentMe"
+        android:text="Percentage"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textView"/>
+    <Button
+        android:id="@+id/voltage_button"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#1ed9a4"
+        android:onClick="voltMe"
+        android:layout_centerHorizontal="true"
+        android:text="Voltage"
+        android:layout_below="@id/percentage_button"/>
+    <Button
+        android:id="@+id/current_button"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="32dp"
+        android:background="#1ed9a4"
+        android:layout_centerHorizontal="true"
+        android:onClick="ampMe"
+        android:text="Current"
+        android:layout_below="@id/voltage_button"/>
+</RelativeLayout>
