@@ -204,6 +204,7 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.textViewTEMPERATURE);
 
         Temperature = batteryStatus.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, -1);
+        Temperature = Temperature/10;
         randomView.setText(Integer.toString(Temperature));
     }
 

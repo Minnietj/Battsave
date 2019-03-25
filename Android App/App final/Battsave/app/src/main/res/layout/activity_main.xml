@@ -1,67 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    >
+
+    <TextView
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1ed9a4"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="20dp"
+        android:text="BattSave"
+        android:textColor="#ffffff"
+        android:textSize="45dp" />
+
+    <ImageView
+        android:layout_width="79dp"
+        android:layout_height="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/batt_save_icon" />
 
     <TextView
         android:id="@+id/Textbox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:text="Large Text"
+        />
 
     <TextView
         android:id="@+id/textViewPERCENTAGE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146" />
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/percentage_button"
+        android:layout_alignBaseline="@id/percentage_button"
+        android:text="0" />
 
     <TextView
         android:id="@+id/textViewVOLTAGE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146" />
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/voltage_button"
+        android:layout_alignBaseline="@id/voltage_button"
+        android:text="0" />
 
     <TextView
         android:id="@+id/textViewCURRENT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.676"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146" />
+        android:layout_below="@id/textViewVOLTAGE"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/current_button"
+        android:layout_alignBaseline="@id/current_button"
+        android:text="0" />
 
     <TextView
         android:id="@+id/textViewTEMPERATURE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146" />
+        android:layout_below="@id/textViewVOLTAGE"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/temperature_button"
+        android:layout_alignBaseline="@id/temperature_button"
+        android:text="0" />
+    <Button
+        android:id="@+id/percentage_button"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#1ed9a4"
+        android:text="Percentage"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/Textbox1"/>
+    <Button
+        android:id="@+id/voltage_button"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#1ed9a4"
+        android:layout_centerHorizontal="true"
+        android:text="Voltage"
+        android:layout_below="@id/percentage_button"/>
+    <Button
+        android:id="@+id/current_button"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="32dp"
+        android:background="#1ed9a4"
+        android:layout_centerHorizontal="true"
+        android:text="Current"
+        android:layout_below="@id/voltage_button"/>
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/temperature_button"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="32dp"
+        android:background="#1ed9a4"
+        android:layout_centerHorizontal="true"
+        android:text="Temperature"
+        android:layout_below="@id/current_button"/>
+</RelativeLayout>

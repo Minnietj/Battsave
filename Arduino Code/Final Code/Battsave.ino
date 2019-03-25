@@ -27,14 +27,20 @@
     int analogPin = A0; 
     int Threshold = 6;
 
-    const int upButtonPin = 4;
-    const int downButtonPin = 5;
+    const int buttonPinUp = 6;
+    const int buttonPinDown = 5;
+    int buttonStateUp = 0;         // variable for reading the pushbutton status
+    int buttonStateDown = 0;
+    int lastButtonStateUp = 0;
+    int lastButtonStateDown = 0;
+    int buttonPushCounterUp = 0;
+    int buttonPushCounterDown = 9;
 
     int loopCounter = 0;
 
 void setup() {
     pinMode(3, OUTPUT);
-    pinMode(4, INPUT);
+    pinMode(6, INPUT); //Moved to 6 instead of 4 because 4 is reserved as the OLED reset Pin
     pinMode(5, INPUT);
     Serial.begin(9600);
 
@@ -74,9 +80,12 @@ void UpdateScreen(){
   display.println(Current);
   display.print("Prcnt: ");
   display.println(Percentage);
-  display.display();
-
   
+
+  display.setCursor(86, 10);
+  display.setTextSize(3);
+  display.print(Threshold);
+  display.display();
 }
 
 
@@ -176,21 +185,36 @@ void loop() {
 
 
   //Button Read
+  buttonStateUp = digitalRead(buttonPinUp);
+  buttonStateDown = digitalRead(buttonPinDown);
+  if(buttonStateUp != lastButtonStateUp){
+    
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+    if (buttonStateUp == HIGH) {
+       Threshold++;
+       if (Threshold > 100){
+         Threshold = 100;
+       }
+    }    
+   }
+   if(buttonStateDown != lastButtonStateDown){
+    // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+    if (buttonStateDown == HIGH) {
+        Threshold--;
+        if (Threshold < 0){
+          Threshold = 0;
+        }
+    }    
+   }
+   lastButtonStateUp = buttonStateUp;
+   lastButtonStateDown = buttonStateDown;
 
-  if((digitalRead(upButtonPin)) && (Threshold<100) && (loopCounter == 0)){
-    Threshold++;
-    Serial.println("up");
-  }
-  if((digitalRead(downButtonPin))&& (Threshold>10) && (loopCounter == 0)){
-    Threshold--;
-    Serial.println("down");
-  }
 
 
 
 
 
-  //MOSFET Control
+  //Relay Control
   if(Percentage >= Threshold){
     digitalWrite(3, HIGH);
   }
