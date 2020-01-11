@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         //This is just a message to indicate that comms have been established between arduino and phone
-                        myTextView.setText("yoo bitch its half working");
+                        myTextView.setText("yoo its half working");
                         // Stuff that updates the UI
 
                     }
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         //Sad message.
-                        myTextView.setText("Permission DENIED bitchhhh");
+                        myTextView.setText("Permission DENIED");
                         // Stuff that updates the UI
 
                     }
